@@ -19,43 +19,48 @@
     <a href="url">YouTube</a>  
 </p>
 
+<img style="z-index:0;" src="gif/para.gif" alt="funny animation GIF"> 
 
-<img style="top: 250px; left:20px;" 
-    src="https://upload.wikimedia.org/wikipedia/commons/6/60/Bringer_of_War_Planet.png"></img>
 
-<p style="top: 300px; left:30%; text-align:left"> The inner most planet follows an eliptical orbit. 
-    <br> The original problem I had with this when using a <strong>simple nonparametric forumula</strong>
-    <br> was when it reached the <strong>boundary point</strong> (where Y is 0 and the equation flips)
-    <br> is that there is a point when the y value returned can't exist, and the equation spits out an <strong>Integer.Max</strong>.
-    <br> The problem with this is it would glitch around the boundaries, when it would teleport to the max Y our game supports.
-    <br>
-    <br> The solution to this problem was to use <strong>parametric formula</strong> instead,
-    <br>  using maths to make X and Y dependent on the other variable of delta Time, instead of themselves.
-    <br> The result is a smooth orbit that does not vary in speed - exactly what we want.
-</p> 
+<div>
+	<img style="top: 250px; left:20px;" 
+		src="https://upload.wikimedia.org/wikipedia/commons/6/60/Bringer_of_War_Planet.png"></img>
 
-<img style="top: 500px; right:20px;" 
-    src="https://upload.wikimedia.org/wikipedia/commons/6/60/Bringer_of_War_Planet.png"></img>
+	<p style="top: 300px; left:30%; text-align:left"> The inner most planet follows an eliptical orbit. 
+		<br> The original problem I had with this when using a <strong>simple nonparametric forumula</strong>
+		<br> was when it reached the <strong>boundary point</strong> (where Y is 0 and the equation flips)
+		<br> is that there is a point when the y value returned can't exist, and the equation spits out an <strong>Integer.Max</strong>.
+		<br> The problem with this is it would glitch around the boundaries, when it would teleport to the max Y our game supports.
+		<br>
+		<br> The solution to this problem was to use <strong>parametric formula</strong> instead,
+		<br>  using maths to make X and Y dependent on the other variable of delta Time, instead of themselves.
+		<br> The result is a smooth orbit that does not vary in speed - exactly what we want.
+	</p> 
 
-<p style="top: 550px; right:30%; text-align:right"> 
-    The second planet in our solar system follows a <strong>circular orbit</strong>.
-    <br> Additionally, it is noticeably <strong>rotating at an angle</strong>.
-    <br> This was particularly difficult to do, however in the end I managed to rotate it's parent class, 
-    <br> and then only update this <strong>planet's relative position</strong>, not absolute. 
-    <br> It uses a <strong>parametric formula</strong>, as it suffered from the problems that the eliptical planet had. 
-    <br> For instance, it <strong> used to speed up towards the equations boundary</strong>, like a giant booster is applied.
-</p> 
+	<img style="top: 500px; right:20px;" 
+		src="https://upload.wikimedia.org/wikipedia/commons/6/60/Bringer_of_War_Planet.png"></img>
 
-<img style="top: 750px; left:20px;" 
-    src="https://upload.wikimedia.org/wikipedia/commons/6/60/Bringer_of_War_Planet.png"></img>
+	<p style="top: 550px; right:30%; text-align:right"> 
+		The second planet in our solar system follows a <strong>circular orbit</strong>.
+		<br> Additionally, it is noticeably <strong>rotating at an angle</strong>.
+		<br> This was particularly difficult to do, however in the end I managed to rotate it's parent class, 
+		<br> and then only update this <strong>planet's relative position</strong>, not absolute. 
+		<br> It uses a <strong>parametric formula</strong>, as it suffered from the problems that the eliptical planet had. 
+		<br> For instance, it <strong> used to speed up towards the equations boundary</strong>, like a giant booster is applied.
+	</p> 
 
-<p style="top: 800px; left:30%; text-align:left"> 
-    The second planet in our solar system follows a <strong>circular orbit too</strong>.
-    <br> The main difference with this planet is the orbit is calculated by Unreal's 
-    <a href = "https://docs.unrealengine.com/4.27/en-US/Basics/Components/Movement/"> Rotating Movement Component</a>.
-    <br> Using this, we have a comparison from in engine library, to my code. 
-    <br> There is little to no difference now that the other planets use parametric functions to calculate their next coordinates.
-    </p> 
+	<img style="top: 750px; left:20px;" 
+		src="https://upload.wikimedia.org/wikipedia/commons/6/60/Bringer_of_War_Planet.png"></img>
+
+	<p style="top: 800px; left:30%; text-align:left"> 
+		The second planet in our solar system follows a <strong>circular orbit too</strong>.
+		<br> The main difference with this planet is the orbit is calculated by Unreal's 
+		<a href = "https://docs.unrealengine.com/4.27/en-US/Basics/Components/Movement/"> Rotating Movement Component</a>.
+		<br> Using this, we have a comparison from in engine library, to my code. 
+		<br> There is little to no difference now that the other planets use parametric functions to calculate their next coordinates.
+		</p> 
+	
+</div>
 
 <div class="stars"></div>  
 <div class="twinkling"></div>       
