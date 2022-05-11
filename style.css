@@ -1,4 +1,4 @@
-﻿@keyframes move-background {
+@keyframes move-background {
   from {
     -webkit-transform: translate3d(0px, 0px, 0px);
   }
@@ -64,20 +64,6 @@
   animation: move-background 70s linear infinite;
 }
 
-/* Three image containers (use 25% for four, and 50% for two, etc) */
-.column {
-  float: left;
-  width: 50%;
-  padding: 5px;
-}
-
-/* Clear floats after image containers */
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
 .header {
   background: black url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/stars.png) repeat;
   position: absolute;
@@ -92,31 +78,37 @@ h1 {
   font-size: 100px;
   font-family: 'Roboto', sans-serif;
   width:100%;
-  z-index: 3;
   text-align: center;
-  color: black;
+  position: relative;
+  z-index: 4;
+  color: white;
 }
 h2 {
   font-family: 'Roboto', sans-serif;
   width: 100%;
-  z-index: 3;
+  position: relative;
+  z-index: 4;
   text-align: center;
-  color: black;
+  color: white;
 }
-p {
+
+h3 {
   font-family: 'Roboto', sans-serif;
   width: 100%;
+  position: relative;
+  z-index: 4;
+  text-align: center;
+  color: white;
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
+  position: relative;
   z-index: 3;
   text-align: center;
   color: white;
 }
 p a {
-  color: white;
-}
-img {
-  font-family: 'Roboto', sans-serif;
-  height: 400px;
-  width: 400px;
-  z-index: 3;
+  position: relative;
   color: white;
 }

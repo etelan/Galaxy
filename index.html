@@ -11,7 +11,7 @@
 <h1> 
     Galaxy
 </h1>
-<p style="top:200px"> 
+<p> 
     <a href="url">GitHub</a>
     - 
     <a href="url">Itch.io</a> 
@@ -20,74 +20,188 @@
 </p>
 
 
-<div class="row">
-  <div class="column">
-	  <img src="gif/nonpara.gif" alt="Forest" style="width:100%">
-  </div>
-  <div class="column" style="width:100%">
-	  <p> hello there </p>
-  </div>
-</div>
+<h2 style="font-size:42px;"> 
+    Why did I do this?
+</h2>
+<p style="width:100%;"> <strong>I did this to develop and show my understanding of... </strong></p>
+<p style="width:100%;"> <strong>★</strong> C++ (Used mostly C++ in the Unreal Engine) </p>
+<p style="width:100%;"> <strong>★</strong> Vector Math (Mainly Vector Addition) </p>
+<p style="width:100%;"> <strong>★</strong> 2D Cartesian Forumlas </p>
+<p style="width:100%;"> <strong>★</strong> 2D Parametric Forumlas </p>
+<p style="width:100%;"> <strong>★</strong> 2D Vector to 3D Vector Calculations </p>
 
 
-<img style="top:250px; position: relative; z-index: 3; height: 40%; display: block;
-  margin-left: auto;
-  margin-right: auto;
-  min-width:400px;
-  width: 35%;" src="gif/para.gif" alt="funny animation GIF"> 
-<p  style="top:250px; position: relative; z-index: 3; text-align:center; width:100%">Using <a href="https://en.wikipedia.org/wiki/Parametric_equation">Parametric Formulas</a>.</p>
+<h2 style="font-size:42px;"> 
+    What is this?
+</h2>
+<p style="width:100%;"> This is a simple orbit calculator, minus the gravity part.</p>
+<p style="width:100%;"> It calculates using Delta Time where on the circular orbit the planet should be. </p>
+<p style="width:100%;"> To do this, we parse our delta time into our <strong> parametric forumula </strong> with <strong>t</strong> being time. </p>
 
-<img style="position: relative; z-index: 3; height: 40%; display: block;
-  margin-left: auto;
-  margin-right: auto;
-  min-width:400px;
-  width: 35%;" src="gif/nonpara.gif" alt="funny animation GIF"> 
-<p  style="position: relative; z-index: 3; text-align:center; width:100%">Using <a href="https://en.wikipedia.org/wiki/Cartesian_coordinate_system"> Cartesian Equations</a>.</p>
+<h2 style="font-size:42px;"> 
+    Main Problems I Faced
+</h2>
 
+<h3 style="font-size:30px;"> 
+    🔢 Cartesian Formula 📐
+</h3>
+<p style="width:100%;"> Initially I used a cartesian forumula to calcualate the points.</p>
+<p style="width:100%;"> When we reached our boundaries, I would switch the forumula from a plus to a negative.</p>
+<p style="width:100%;"> Unfortunately, although the displacement was correct, the velocity would not be consistent.</p>
+<p style="width:100%;"> The closer the planet got to the x boundary, the faster it would go.</p>
+<p style="width:100%;">When it went past the x boundary, then the Y coordinate was justifiably null or abnormal, resulting in glitches. </p>
 
-<!-- <div>
-	<img style="top: 2000px; left:20px;" 
-		src="https://upload.wikimedia.org/wikipedia/commons/6/60/Bringer_of_War_Planet.png"></img>
+<table style="width:100%; position: relative; z-index: 3; color:white;">
+  <tr>
+    <th style="width:50%"></th>
+    <th style="width:50%"></th>
+  </tr>
+  <tr>
+    <td><img style="width:100%;" src="gif/para.gif" alt="Parametric Orbit"> </td>
+    <td><img style="width:100%;" src="gif/nonpara.gif" alt="Non Parametric Orbit"> </td>
+  </tr>
+  <tr style="  font-family: 'Roboto', sans-serif;
+  text-align: center;">
+      <td><strong>Parametric Equations</strong></td>
+      <td><strong>Cartesian Equations</strong></td>
+  </tr>
+  <tr style="  font-family: 'Roboto', sans-serif;
+  text-align: center;">
+    <td>
+        <p>As you can see, these make the orbits be a consistent speed, 
+            with no glitches at the boundaries. </p>
+        <p style="color:cyan"><strong>( acos(t) , asin(t) ) = ( x , y )</strong></p>
+        <p style="color:cyan">where a is radius.</p></td>
+    </td>
+    <td><p>This causes glitches when x reaches it's limits, 
+        as going past that point for x causes y to be invalid / Integer.Max.</p>
+        <p style="color:cyan"><strong>(x - a)2 + (y − b)2 = r2 </strong></p>
+        <p style="color:cyan">where r is radius.</p></td>
+      </td>
 
-	<p style="top: 2050px; left:30%; text-align:left"> The inner most planet follows an eliptical orbit. 
-		<br> The original problem I had with this when using a <strong>simple nonparametric forumula</strong>
-		<br> was when it reached the <strong>boundary point</strong> (where Y is 0 and the equation flips)
-		<br> is that there is a point when the y value returned can't exist, and the equation spits out an <strong>Integer.Max</strong>.
-		<br> The problem with this is it would glitch around the boundaries, when it would teleport to the max Y our game supports.
-		<br>
-		<br> The solution to this problem was to use <strong>parametric formula</strong> instead,
-		<br>  using maths to make X and Y dependent on the other variable of delta Time, instead of themselves.
-		<br> The result is a smooth orbit that does not vary in speed - exactly what we want.
-	</p> 
+  </tr>
+</table>
 
-	<img style="top: 2250px; right:20px;" 
-		src="https://upload.wikimedia.org/wikipedia/commons/6/60/Bringer_of_War_Planet.png"></img>
+<br>
 
-	<p style="top: 2300px; right:30%; text-align:right"> 
-		The second planet in our solar system follows a <strong>circular orbit</strong>.
-		<br> Additionally, it is noticeably <strong>rotating at an angle</strong>.
-		<br> This was particularly difficult to do, however in the end I managed to rotate it's parent class, 
-		<br> and then only update this <strong>planet's relative position</strong>, not absolute. 
-		<br> It uses a <strong>parametric formula</strong>, as it suffered from the problems that the eliptical planet had. 
-		<br> For instance, it <strong> used to speed up towards the equations boundary</strong>, like a giant booster is applied.
-	</p> 
+<table style="width:100%; position: relative; z-index: 3; color:white;">
+  <tr>
+    <th style="width:30%"></th>
+    <th style="width:70%"></th>
+  </tr>
+  <tr>
+    <td><img style="width:100%;" src="png/drawDebugCircle.png" alt="Debug"> </td>
+    <td>
+        <h3 style="font-size:30px;"> 
+            💫 Draw Orbit 💫
+        </h3>
+        <p style="width:100%;"> I use the Draw Debug Circle built into UE4.</p>
+        <p style="width:100%;"> This allowed me to focus on movement of the planets, rather than drawing the orbit.</p>
+        <p style="width:100%;"> The two problems I faced was drawing an elliptical orbit, and drawing an orbit at an angle.</p>
+        <br>
+        <p style="width:100%;"> The latter was solved by attaching this component to a different parent, the parent of the orbit of that planet.</p>
+        <p style="width:100%;"> As it was already at an angle due to how we calculate that planet's orbit, it drew at an angle too. </p>
+        <p style="width:100%;"> <em>(Side Note: For this planet, we update the relative position and not the absolute position.</em></p>
+        <p style="width:100%;"><em> This allows us to keep our inherited rotation.)</em></p>
+        
+        <p style="width:100%;"> Drawing an elliptical orbit was easier, we modified out YAxis and ZAxis scales to fit our orbit. </p>
 
-	<img style="top: 2500px; left:20px;" 
-		src="https://upload.wikimedia.org/wikipedia/commons/6/60/Bringer_of_War_Planet.png"></img>
+    </td>
+  </tr>
+</table>
 
-	<p style="top: 2550px; left:30%; text-align:left"> 
-		The second planet in our solar system follows a <strong>circular orbit too</strong>.
-		<br> The main difference with this planet is the orbit is calculated by Unreal's 
-		<a href = "https://docs.unrealengine.com/4.27/en-US/Basics/Components/Movement/"> Rotating Movement Component</a>.
-		<br> Using this, we have a comparison from in engine library, to my code. 
-		<br> There is little to no difference now that the other planets use parametric functions to calculate their next coordinates.
-		</p> 
-	
-</div> -->
+<!-- FEATURES -->
+<h2 style="font-size:42px;"> 
+    Features
+</h2>
+
+<table style="width:100%; position: relative; z-index: 3; color:white;">
+  <tr>
+    <th style="width:30%"></th>
+    <th style="width:70%"></th>
+  </tr>
+  <tr>
+    <td><img style="width:100%;" src="https://code.visualstudio.com/assets/images/code-stable-white.png" alt="Feature 1 Placeholder"> </td>
+    <td><p style="text-align: left; margin-left:20px; margin-right:20px;"><strong>FEATURE ONE PLACEHOLDER TEXT</strong></p>
+      <p style="text-align: left; margin-left:20px; margin-right:20px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tempor commodo arcu non lobortis. Quisque nec purus feugiat, lacinia leo eu, tempus ex. Nam ut fringilla nisi, tempor vestibulum elit. Vestibulum ornare erat dui, non pulvinar ex tincidunt in. Nam interdum nulla gravida, pellentesque nisl nec, maximus nulla. Ut nunc nulla, porta vel pretium non, ullamcorper vitae est. Morbi pharetra tortor ac scelerisque porta.</p>
+        <p style="text-align: left; margin-left:20px; margin-right:20px;">Nam eget elit dolor. Vestibulum bibendum orci pharetra nulla sodales, eget pellentesque tellus gravida. Nam pharetra felis a ornare consectetur. Maecenas non neque massa. Donec vitae ligula non ex volutpat varius non ac risus. Maecenas consequat faucibus nunc, ac vehicula massa rutrum ut. Praesent imperdiet imperdiet elit ut imperdiet.</td>
+  </tr>
+</table>
+
+<h2 style="font-size:42px;"> 
+    Planets
+</h2>
+
+<!-- PLANET 1 - Ellipse -->
+<table style="width:100%; position: relative; z-index: 3; color:white;">
+  <tr>
+    <th style="width:30%"></th>
+    <th style="width:70%"></th>
+  </tr>
+  <tr>
+    <td><img style="width:100%;" src="https://upload.wikimedia.org/wikipedia/commons/6/60/Bringer_of_War_Planet.png" alt="World 1 Placeholder"> </td>
+    <td><p style="text-align: left; margin-left:20px; margin-right:20px;"><strong>PLANET 1 PLACEHOLDER</strong></p>
+        <p style="text-align: left; margin-left:20px; margin-right:20px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tempor commodo arcu non lobortis. Quisque nec purus feugiat, lacinia leo eu, tempus ex. Nam ut fringilla nisi, tempor vestibulum elit. Vestibulum ornare erat dui, non pulvinar ex tincidunt in. Nam interdum nulla gravida, pellentesque nisl nec, maximus nulla. Ut nunc nulla, porta vel pretium non, ullamcorper vitae est. Morbi pharetra tortor ac scelerisque porta.</p>
+        <p style="text-align: left; margin-left:20px; margin-right:20px;">Nam eget elit dolor. Vestibulum bibendum orci pharetra nulla sodales, eget pellentesque tellus gravida. Nam pharetra felis a ornare consectetur. Maecenas non neque massa. Donec vitae ligula non ex volutpat varius non ac risus. Maecenas consequat faucibus nunc, ac vehicula massa rutrum ut. Praesent imperdiet imperdiet elit ut imperdiet./td>
+  </tr>
+</table>
+
+<!-- PLANET 2 - Angle -->
+<table style="width:100%; position: relative; z-index: 3; color:white;">
+  <tr>
+    <th style="width:70%"></th>
+    <th style="width:30%"></th>
+  </tr>
+  <tr>
+    
+    <td>
+        <p style="text-align: right;"><strong>PLANET 2 PLACEHOLDER</strong></p>
+        <p style="text-align: right; margin-left:20px">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tempor commodo arcu non lobortis. Quisque nec purus feugiat, lacinia leo eu, tempus ex. Nam ut fringilla nisi, tempor vestibulum elit. Vestibulum ornare erat dui, non pulvinar ex tincidunt in. Nam interdum nulla gravida, pellentesque nisl nec, maximus nulla. Ut nunc nulla, porta vel pretium non, ullamcorper vitae est. Morbi pharetra tortor ac scelerisque porta.</p>
+        <p style="text-align: right; margin-left:20px">Nam eget elit dolor. Vestibulum bibendum orci pharetra nulla sodales, eget pellentesque tellus gravida. Nam pharetra felis a ornare consectetur. Maecenas non neque massa. Donec vitae ligula non ex volutpat varius non ac risus. Maecenas consequat faucibus nunc, ac vehicula massa rutrum ut. Praesent imperdiet imperdiet elit ut imperdiet.
+
+</p>
+    </td>
+      <td><img style="width:100%;" src="https://upload.wikimedia.org/wikipedia/commons/c/cb/The_Blue_Marble_%28remastered%29.jpg" alt="World 2 Placeholder"> </td>
+  </tr>
+</table>
+
+<!-- Moon 2a  -->
+<table style="width:100%; position: relative; z-index: 3; color:white;">
+  <tr>
+    <th style="width:80%"></th>
+    <th style="width:20%"></th>
+  </tr>
+  <tr>
+    
+    <td>
+        <p style="text-align: right;"><strong>PLANET 2 MOON PLACEHOLDER</strong></p>
+        <p style="text-align: right; margin-left:20px">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tempor commodo arcu non lobortis. Quisque nec purus feugiat, lacinia leo eu, tempus ex. Nam ut fringilla nisi, tempor vestibulum elit. Vestibulum ornare erat dui, non pulvinar ex tincidunt in. Nam interdum nulla gravida, pellentesque nisl nec, maximus nulla. Ut nunc nulla, porta vel pretium non, ullamcorper vitae est. Morbi pharetra tortor ac scelerisque porta.</p>
+        <p style="text-align: right; margin-left:20px">Nam eget elit dolor. Vestibulum bibendum orci pharetra nulla sodales, eget pellentesque tellus gravida. Nam pharetra felis a ornare consectetur. Maecenas non neque massa. Donec vitae ligula non ex volutpat varius non ac risus. Maecenas consequat faucibus nunc, ac vehicula massa rutrum ut. Praesent imperdiet imperdiet elit ut imperdiet.
+
+</p>
+    </td>
+      <td><img style="width:100%;" src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Mercury_in_color_-_Prockter07-edit1.jpg" alt="World 2 Placeholder"> </td>
+  </tr>
+</table>
+
+<!-- PLANET 3 - Unreal -->
+<table style="width:100%; position: relative; z-index: 3; color:white;">
+  <tr>
+    <th style="width:30%"></th>
+    <th style="width:70%"></th>
+  </tr>
+  <tr>
+    <td><img style="width:100%;" src="https://upload.wikimedia.org/wikipedia/commons/0/02/OSIRIS_Mars_true_color.jpg" alt="World 3 Placeholder"> </td>
+    <td><p style="text-align: left; margin-left:20px; margin-right:20px;"><strong>PLANET 3 PLACEHOLDER</strong></p>
+        <p style="text-align: left; margin-left:20px; margin-right:20px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tempor commodo arcu non lobortis. Quisque nec purus feugiat, lacinia leo eu, tempus ex. Nam ut fringilla nisi, tempor vestibulum elit. Vestibulum ornare erat dui, non pulvinar ex tincidunt in. Nam interdum nulla gravida, pellentesque nisl nec, maximus nulla. Ut nunc nulla, porta vel pretium non, ullamcorper vitae est. Morbi pharetra tortor ac scelerisque porta.</p>
+        <p style="text-align: left; margin-left:20px; margin-right:20px;">Nam eget elit dolor. Vestibulum bibendum orci pharetra nulla sodales, eget pellentesque tellus gravida. Nam pharetra felis a ornare consectetur. Maecenas non neque massa. Donec vitae ligula non ex volutpat varius non ac risus. Maecenas consequat faucibus nunc, ac vehicula massa rutrum ut. Praesent imperdiet imperdiet elit ut imperdiet./td>
+  </tr>
+</table>
+
 
 <div class="stars"></div>  
 <div class="twinkling"></div>       
 <div class="background-container">
-
-
-</div>
+    <div class="stars"></div>  
+<div class="twinkling"></div>       
+<div class="background-container"></div>
