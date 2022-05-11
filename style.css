@@ -78,7 +78,6 @@ h1 {
   font-family: 'Roboto', sans-serif;
   height: 70vh;
   width: 100%;
-  position: absolute;
   z-index: 3;
   text-align: center;
   color: white;
@@ -87,7 +86,6 @@ h2 {
   font-family: 'Roboto', sans-serif;
   height: 70vh;
   width: 100%;
-  position: absolute;
   z-index: 3;
   text-align: center;
   color: white;
