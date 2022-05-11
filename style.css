@@ -30,6 +30,10 @@
     -webkit-transform: translate3d(1000px, 0px, 0px);
   }
 }
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
 .background-container {
   position: fixed;
   top: 0;
@@ -49,7 +53,7 @@
 }
 .twinkling {
   width: 10000px;
-  height: 100%;
+  height: 2500px;
   background: transparent url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/twinkling.png") repeat;
   background-size: 1000px 1000px;
   position: absolute;
