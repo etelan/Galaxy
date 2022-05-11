@@ -91,15 +91,13 @@
 h1 {
   font-size: 100px;
   font-family: 'Roboto', sans-serif;
-  height: 70vh;
-  width: 100%;
+  width:100%;
   z-index: 3;
   text-align: center;
   color: white;
 }
 h2 {
   font-family: 'Roboto', sans-serif;
-  height: 70vh;
   width: 100%;
   z-index: 3;
   text-align: center;
@@ -107,7 +105,6 @@ h2 {
 }
 p {
   font-family: 'Roboto', sans-serif;
-  height: 70vh;
   width: 100%;
   z-index: 3;
   text-align: center;
@@ -120,7 +117,6 @@ img {
   font-family: 'Roboto', sans-serif;
   height: 400px;
   width: 400px;
-  position: absolute;
   z-index: 3;
   color: white;
 }
