@@ -3,17 +3,14 @@
 
 #include "OrbitalCoordinateCalculator.h"
 
+// This is not best practice! Should move it into the .h class, to make it more readable and reduce scope of the variables.
 bool forward = true;
 float EllipseStep = 0;
 
 // Sets default values for this component's properties
 UOrbitalCoordinateCalculator::UOrbitalCoordinateCalculator()
 {
-	// Set this component to be initialized when the game starts, and to be ticked every frame.  You can turn these features
-	// off to improve performance if you don't need them.
 	PrimaryComponentTick.bCanEverTick = true;
-
-	// ...
 }
 
 
@@ -46,8 +43,5 @@ void UOrbitalCoordinateCalculator::TickComponent(float DeltaTime, ELevelTick Tic
 
 	x = getX(EllipseStep);
 	y = getY(EllipseStep);
-
-
-
 }
 
