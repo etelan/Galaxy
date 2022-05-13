@@ -8,11 +8,7 @@
 // Sets default values for this component's properties
 UMoonOrbit::UMoonOrbit()
 {
-	// Set this component to be initialized when the game starts, and to be ticked every frame.  You can turn these features
-	// off to improve performance if you don't need them.
 	PrimaryComponentTick.bCanEverTick = true;
-
-	// ...
 }
 
 
@@ -20,14 +16,14 @@ UMoonOrbit::UMoonOrbit()
 void UMoonOrbit::BeginPlay()
 {
 	Super::BeginPlay();
+	
+	// Snap it to the planet to start.
 	moonLocation.X = planetLocation.X;
 	moonLocation.Y = planetLocation.Y;
-	moonLocation.Z = planetLocation.Z;
-	// ...
-	
+	moonLocation.Z = planetLocation.Z;	
 }
 
-
+// This keeps the moon from flying off sometimes.
 float keepToRadius(float planet, float moon, float radius) {
 	float diff = planet - moon;
 
