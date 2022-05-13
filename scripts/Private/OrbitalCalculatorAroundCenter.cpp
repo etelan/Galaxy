@@ -6,6 +6,7 @@
 #define PI 3.14159265
 
 
+// This is not best practice! Should move it into the .h class, to make it more readable.
 bool circleForward = true;
 int radius = 750;
 float Step;
